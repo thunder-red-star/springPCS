@@ -8,18 +8,19 @@ time spent: 1.5 hrs
 Discoveries
 ------------------------------------------------
 * We can short-circuit the for loop to prevent errors.
+* The local mode of a number in an array list is whether it has a higher frequency in the array than its two neighbors.
 ================================================
 
 
 Questions Comments Concerns
 ------------------------------------------------
-* 
+* Our only concern is that we have no concerns!
 ================================================
 
 
 Other comments
 ------------------------------------------------
-* 
+* We like coding!
 ================================================
 
 
