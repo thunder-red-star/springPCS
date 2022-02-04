@@ -59,7 +59,8 @@ public class StatPrinter
 
 
   // create a frequency arraylist for the data
-  public StatPrinter( ArrayList <Integer> data ) 
+  // the bigO of this method is O(n)
+  public StatPrinter( ArrayList <Integer> data )
   {
     _frequency = new ArrayList<Integer>();
     for (Integer i = 0; i < max(data) + 1; i++) {
@@ -71,6 +72,7 @@ public class StatPrinter
   }
 
   // return the largest integer in the data
+  // the bigO of this method is O(n)
   public Integer max( ArrayList <Integer> data ) 
   {
     Integer max = 0;
@@ -84,7 +86,8 @@ public class StatPrinter
 
 
   // Return whether the number is a local mode (i.e. the frequency of the number is greater than the frequency of the number at the index-1 and greater than the frequency of the number at the index+1)
-  public boolean isLocalMode( int i ) 
+  // the bigO of this method is O(n)
+  public boolean isLocalMode( int i )
   {
     for (int j = i-1; j < i+1; j++) {
       if (_frequency.get(i) > _frequency.get(j)) {
@@ -96,6 +99,7 @@ public class StatPrinter
 
 
   // Return the local modes of the data
+  // the bigO of this method is O(n)
   public ArrayList<Integer> getLocalModes()
   {
     ArrayList<Integer> localModes = new ArrayList<Integer>();
@@ -109,6 +113,7 @@ public class StatPrinter
 
 
   // Prints a histogram of the data, given the longest bar length
+  // the bigO of this method is O(n)
   public void printHistogram( int longestBar ) 
   {
     System.out.println("0 : " + repeat("*", _frequency.get(0)));

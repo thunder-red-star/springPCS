@@ -1,23 +1,23 @@
-Team Phantom Tollbooth (Clyde Sinclair, Fierce Dragon)
-APCS pd0
+Team Fresh (Brianna Tieu, William Vongphanith, Ruiwen Tang)
+APCS pd6
 L05 -- pulling it together
 2022-02-03r
-time spent:  hrs
+time spent: 1.5 hrs
 
 
-DISCO
+Discoveries
+------------------------------------------------
+* We can short-circuit the for loop to prevent errors.
+================================================
+
+
+Questions Comments Concerns
 ------------------------------------------------
 * 
 ================================================
 
 
-QCC
-------------------------------------------------
-* 
-================================================
-
-
-MISC
+Other comments
 ------------------------------------------------
 * 
 ================================================
