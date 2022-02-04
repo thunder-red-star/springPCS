@@ -83,7 +83,7 @@ public class StatPrinter {
 
 
     // Return whether the number is a local mode (i.e. the frequency of the number is greater than the frequency of the number at the index-1 and greater than the frequency of the number at the index+1)
-    // the bigO of this method is O(n)
+    // the bigO of this method is O(n) in theory, but really it's O(1) because it checks two cases every time, a constant number of cases for every loop
     public boolean isLocalMode(int i) {
         for (int j = i - 1; j < i + 1; j++) {
             if (_frequency.get(i) > _frequency.get(j)) {
