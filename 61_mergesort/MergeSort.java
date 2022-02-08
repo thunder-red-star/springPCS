@@ -6,7 +6,13 @@
 
 public class MergeSort
 {
-    // Merge two sorted arrays, the output should be sorted.
+   /******************************************************
+    * int[] merge(int[],int[])
+    * Merges two input arrays
+    * Precond:  Input arrays are sorted in ascending order
+    * Postcond: Input arrays unchanged, and
+    * output array sorted in ascending order.
+    ******************************************************/
     private static int[] merge( int[] a, int[] b )
     {
         int[] result = new int[a.length+b.length];
