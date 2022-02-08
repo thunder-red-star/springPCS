@@ -1,0 +1,61 @@
+Fresh :: Brianna Tieu, Raven (Ruiwen) Tang, William Vongphanith
+APCS pd06
+HW60 -- simple unit instructions -> powerful emergent behavior
+2022-02-07
+time spent: 0.5 hrs
+
+
+DISCO
+------------------------------------------------
+* We went over the term "outsourcing" and how it helps us optimize.
+  "Outsourcing" means that there are many smaller turtles or computing 
+  machines which each complete quick, relatively easy tasks that overall 
+  contribute to the solution of the entire problem, rather than having one 
+  machine/component work through a lengthy and complex process that takes time
+  and requires the other machines to wait/not do much.
+* There is a sort of reversal/undo aspect of this sorting algorithm. Cards are
+  distributed until each turtle is handling at most 1 card, and cards are then accumulated
+  again.
+* There is a very simple, almost base case-like condition for a "sorted" deck: simply, is there 
+  1 element in the deck?
+* Every thinker who comes in contact with a subdeck is both a giver and receiver of that exact subdeck.
+================================================
+
+
+QCC
+------------------------------------------------
+* How does the efficiency of this algorithm compare to our previous sorting
+  algorithms, such as BubbleSort, SelectionSort and InsertionSort? We are not completely
+  sure what the time complexity would be.
+* The individual actions of each turtle in this problem seemed similar to the way
+  the task of the monks in the Tower of Hanoi problem was presented in Intro CS (each 
+  monk completes what it was told to do and reports back)!
+* Does it matter how precisely the subdecks of the cards are split? In class, we were pretty rough in estimating
+  what "half" of the deck was. It wasn't precise. For example, a subdeck of 16 cards may have been split into 7 and 9,
+  rather than 8 and 8. Does this roughness impact the efficiency of the algorithm in any way, and does it matter at all?
+* Can a thinker be a giver and a receiver for two decks? For example, they receive 1 card and hand it back to the giver of that card.
+  Now, since they are free, can they receive a subdeck from someone else and handle that, since the processes appear to be separate?
+  Or does doing so interfere with the speed of the algorithm?
+================================================
+
+
+THINKER FIRMWARE
+------------------------------------------------
+0: Accept the deck of cards you are given.
+1: Ask "Is it sorted (does the deck have only one card)?"
+  a. yes; hand your card back to the thinker who gave it to you
+  b. no; split the deck in half and pass on both halves to thinkeren who do
+     not possess any cards
+2: If your answer to q1 was "no," wait for the pair of thinkeren to return both
+    parts of the deck
+3: Once both halves are returned, sort both halves by the following process
+  a. compare the starting elements of both halves
+  b. add the smaller element into the merged deck
+  c. repeat until all elements are in the merged deck
+4: Pass your now sorted deck to the thinker who gave it to you.
+================================================
+
+
+useful links copied from assignments page:
+https://ccl.northwestern.edu/netlogo/models/Termites
+https://www.lifewire.com/what-is-firmware-2625881
