@@ -5,6 +5,8 @@ HW60 -- simple unit instructions -> powerful emergent behavior
 time spent: 0.5 hrs
 
 
+gitty test
+
 DISCO
 ------------------------------------------------
 * We went over the term "outsourcing" and how it helps us optimize.
