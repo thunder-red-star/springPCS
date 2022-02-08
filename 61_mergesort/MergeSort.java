@@ -1,12 +1,13 @@
 /***
- class MergeSort
- Implements mergesort on array of ints.
- Summary of Algorithm:
+ Team Gnome-session (William Vongphanith, Brian Wang)
+ APCS pd6
+ HW61 --
+ 2022-02-07
  ***/
 
 public class MergeSort
 {
-    // Merge two sorted arrays, the output should be sorted.
+
     private static int[] merge( int[] a, int[] b )
     {
         int[] result = new int[a.length+b.length];
