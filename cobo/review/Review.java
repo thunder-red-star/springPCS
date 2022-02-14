@@ -162,4 +162,57 @@ public class Review {
             return randomNegativeAdj();
         }
     }
+
+    /**
+     * @returns the total sentiment of a review in a file measured by the sum of the values of each word in the review
+     * (positive and negative)
+     * @param text the filename that contains a string to be analyzed
+     */
+    public static double totalSentiment ( String filename ) {
+        // read the file provided in the input
+        String text = textToString(filename);
+
+        // split the text into individual words
+        String[] words = text.split("\\s+");
+
+        // initialize the sum of the sentiment values
+        double sum = 0;
+
+        // for each word in the review, add its sentiment value to the sum
+        for (String word : words) {
+            sum += sentimentVal(word);
+        }
+
+        return sum;
+    }
+
+    /**
+     * @params a filename that contains a string to be analyzed
+     * @returns the star rating of a review in a file based on totalSentiment
+     */
+    public static int starReview ( String filename ) {
+        // read the file provided in the input
+        double sentiment = totalSentiment(filename);
+
+        // if the sentiment is greater than 15, return 5 stars
+        if (sentiment > 15) {
+            return 5;
+        }
+        // if the sentiment is greater than 5 but less than 15, return 4 stars
+        else if (sentiment > 5 && sentiment <= 15) {
+            return 4;
+        }
+        // if the sentiment is greater than -5 but less than 5, return 3 stars
+        else if (sentiment > -5 && sentiment <= 5) {
+            return 3;
+        }
+        // if the sentiment is greater than -15 but less than -5, return 2 stars
+        else if (sentiment > -15 && sentiment <= -5) {
+            return 2;
+        }
+        // if the sentiment is less than -15, return 1 star
+        else {
+            return 1;
+        }
+    }
 }
