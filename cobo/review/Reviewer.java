@@ -22,6 +22,6 @@ public class Reviewer {
     }
 
     public static void main (String[] args) {
-        testTotalSentiment();
+        Review.copyToFiles();
     }
 }
