@@ -73,9 +73,32 @@ public class Recursion {
         if (firstDigit == 7 && n < 10) {
             return 1;
         }
+        else if (firstDigit != 7 && n < 10) {
+            return 0;
+        }
+        else if (firstDigit == 7 && n >= 10) {
+            return 1 + count7(n / 10);
+        }
         // if the first digit is not 7, return 0
         else {
+            return 0 + count7(n / 10);
+        }
+    }
+
+    // Given a non-negative int n, compute recursively (no loops) the count of the occurrences of 8 as a digit, except that an 8 with another 8 immediately to its left counts double, so 8818 yields 4. Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
+    public static int count8 (int n) {
+        int firstDigit = n % 10;
+        if (firstDigit == 8 && n < 10) {
+            return 1;
+        }
+        else if (firstDigit != 8 && n < 10) {
             return 0;
+        }
+        else if (firstDigit == 8 && n >= 10) {
+            return (count8(n / 10) > count8(n / 100) ? 2 : 1) + count8(n / 10);
+        }
+        else {
+            return 0 + count8(n / 10);
         }
     }
 }
