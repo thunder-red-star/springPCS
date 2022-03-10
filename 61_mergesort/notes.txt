@@ -4,9 +4,6 @@ HW60 -- simple unit instructions -> powerful emergent behavior
 2022-02-07
 time spent: 0.5 hrs
 
-
-gitty test
-
 DISCO
 ------------------------------------------------
 * We went over the term "outsourcing" and how it helps us optimize.
