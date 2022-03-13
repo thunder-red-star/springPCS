@@ -29,11 +29,11 @@
  *     swap arr[b], arr[s]
  *
  * DISCO
- * * Look at that! It's a quicksort!
+ * * Look at that! It's a quicksort, it seems!
  * QCC
  * * n/a
  * q0: What does it do?
- * a0: Looks like a sorting algorithm to me. Quicksort?
+ * a0: Looks like a sorting algorithm to me. Quicksort? After running the test cases the array seems sorted.
  *
  * q1: O(?) 
  * a1: O(n log n) on average.
