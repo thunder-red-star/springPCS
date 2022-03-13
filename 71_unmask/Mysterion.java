@@ -150,7 +150,7 @@ public class Mysterion
     + testC +"...");
     printArr(arr5);
     System.out.println("-----------------------");
-    
+    }
     }//end main
 
 }//end class Mysterion
