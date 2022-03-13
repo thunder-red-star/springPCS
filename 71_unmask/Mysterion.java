@@ -1,8 +1,8 @@
-// Clyde Sinclair
-// APCS pd0
-// HW71 -- Reading for intent, tracing for VICTORY
+// William Vongphanith
+// APCS pd6
+// HW71 -- Mysterious sorting algorithm
 // 2022-03-07m
-// time spent:  hrs
+// time spent: 0.6 hrs
 
 /***
  * SKEELTON for
@@ -13,8 +13,8 @@
  * The Mysterion method ... <YOUR TRIO'S DESCRIPTION HERE>
  * <p>
  * <b>Note:</b> BLAH blah blah, yakkety schmakketty...
- * @author  Trey Parker, Matt Stone
- * @version 3.1415926535897932384626433
+ * @author  William Vongphanith
+ * @version 1.0.1
  * @since   2022-03-07m
  *
  * algo as pseudocode:
@@ -29,14 +29,14 @@
  *     swap arr[b], arr[s]
  *
  * DISCO
- *
+ * * Look at that! It's a quicksort!
  * QCC
- *
+ * * n/a
  * q0: What does it do?
- * a0:
+ * a0: Looks like a sorting algorithm to me. Quicksort?
  *
- * q1: O(?)
- * a1:
+ * q1: O(?) 
+ * a1: O(n log n) on average.
  *
  ***/
 
@@ -96,14 +96,24 @@ public class Mysterion
      */
     public static int mysterion( int arr[], int a, int b, int c)
     {
-
+        int v = arr[c];
+        swap( c, b, arr );
+        int s = a;
+        for( int i = a; i < b; i++ ) {
+            if( arr[i] < v ) {
+                swap( s, i, arr );
+                s++;
+            }
+        }
+        swap( b, s, arr );
+        return s;
     }//end mysterion
 
 
     //main method for testing
     public static void main( String[] args )
     {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
     //init test arrays of magic numbers
     int[] arr1 = {8,21,17,69,343};
     int[] arr3 = {1,28,33,4982,37};
@@ -140,7 +150,7 @@ public class Mysterion
     + testC +"...");
     printArr(arr5);
     System.out.println("-----------------------");
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    
     }//end main
 
 }//end class Mysterion
