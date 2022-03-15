@@ -27,7 +27,7 @@ public class LList implements List {
         size = 0;
     }
 
-    // This adds to the beginning, but all the methods in the class work as if it was adding to the end.
+    // This adds to the beginning, but all the methods in the class behave as if it was adding to the end.
     public boolean add (String s) {
         LLNode newHead = new LLNode(s, this.head);
         this.head = newHead;
@@ -63,6 +63,20 @@ public class LList implements List {
         return size;
     }
 
+    public String remove( int index ) {
+        if (index < 0 || index >= size) {
+            return null;
+        }
+        LLNode curr = head;
+        for (int i = 0; i < size-index-1; i++) {
+            curr = curr.next;
+        }
+        String old = curr.cargo;
+        curr.next = curr.next.next;
+        size--;
+        return old;
+    }
+
     // Other methods not in interface
     public String toString() {
         String result = "";
@@ -75,6 +89,19 @@ public class LList implements List {
         }
         result = Utils.addToBeginning(result, "[");
         return result;
+    }
+
+    public boolean add (String s, int index) {
+        if (index < 0 || index >= size) {
+            return false;
+        }
+        LLNode curr = head;
+        for (int i = 0; i < size-index-2; i++) {
+            curr = curr.next;
+        }
+        LLNode newNode = new LLNode(s, curr.next);
+        curr.next = newNode;
+        return true;
     }
 
     // Main method for testing

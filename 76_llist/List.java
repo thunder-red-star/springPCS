@@ -21,4 +21,5 @@ public interface List
   //return length of list
   public int size();
 
+  public String remove( int index );
 }//end interface
