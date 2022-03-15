@@ -113,6 +113,7 @@ public class LList implements List {
     }
 }
 
+//Utils for hacking stuff
 class Utils {
     public static String addToBeginning (String original, String s) {
         return s + original;
