@@ -27,6 +27,7 @@ public class LList implements List {
         size = 0;
     }
 
+    // This adds to the beginning, but all the methods in the class work as if it was adding to the end.
     public boolean add (String s) {
         LLNode newHead = new LLNode(s, this.head);
         this.head = newHead;
