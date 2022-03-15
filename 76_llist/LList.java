@@ -68,11 +68,16 @@ public class LList implements List {
             return null;
         }
         LLNode curr = head;
-        for (int i = 0; i < size-index-1; i++) {
+        for (int i = 0; i < size-index-2; i++) {
             curr = curr.next;
         }
         String old = curr.cargo;
-        curr.next = curr.next.next;
+        try {
+            curr.next = curr.next.next;
+        }
+        catch (NullPointerException e) {
+            curr.next = null;
+        }
         size--;
         return old;
     }
@@ -96,7 +101,7 @@ public class LList implements List {
             return false;
         }
         LLNode curr = head;
-        for (int i = 0; i < size-index-2; i++) {
+        for (int i = 0; i < size-index-1; i++) {
             curr = curr.next;
         }
         LLNode newNode = new LLNode(s, curr.next);
@@ -138,6 +143,22 @@ public class LList implements List {
         System.out.println("The element at index 17 is now " + setTest.set(17, "a picture of a dog"));
 
         System.out.println(setTest);
+
+        LList removeTest = new LList();
+        for (int i = 0; i < 18; i++) {
+            removeTest.add(i + "");
+        }
+
+        System.out.println("The element at index 0 is currently " + removeTest.get(0));
+        removeTest.remove(0);
+        System.out.println("The element at index 0 is now " + removeTest.get(0));
+        System.out.println("The element at index 1 is currently " + removeTest.get(1));
+        removeTest.remove(1);
+        System.out.println("The element at index 1 is now " + removeTest.get(1));
+        System.out.println("The element at index 5 is currently " + removeTest.get(5));
+        removeTest.remove(5);
+        System.out.println("The element at index 5 is now " + removeTest.get(5));
+        System.out.println(removeTest);
     }
 }
 

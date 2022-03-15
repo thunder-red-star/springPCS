@@ -22,4 +22,7 @@ public interface List
   public int size();
 
   public String remove( int index );
+
+  //add node to list, containing input String as its data
+  public boolean add( String x, int index );
 }//end interface
