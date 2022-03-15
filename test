@@ -1,5 +1,0 @@
-test gitty.sh 2 test
-
-it basically pulls and pushes automatically once a minute as a cron job haha very hacky
-
-that means i could automatically make 1440 commits and pushes a day!!!
