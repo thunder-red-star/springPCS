@@ -10,7 +10,7 @@
  * \     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|     /
  *  \   /                                                       \   /
  *   ~~~                                                         ~~~
- * (generated with boxes -- boxes -a c d scroll <<< "design is cool")
+ * (generated with boxes)
  */
 
 // Uses the LLNode class from HW75 to construct the Linked List class.
