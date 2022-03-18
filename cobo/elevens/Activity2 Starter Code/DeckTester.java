@@ -24,7 +24,7 @@ public class DeckTester {
         System.out.println(deck2.deal());
 
         // [sic]
-        Deck deck3 = new Deck({"China", "Taiwan", "Japan"}, {"Buddhists", "Hinduists", "Juddists"}, {1, 2, 3});
+        Deck deck3 = new Deck({"China", "Taiwan", "Japan"}, {"Buddhists", "Hinduists", "Christians"}, {4, 5, 3});
         deck3.shuffle();
         System.out.println(deck3);
         System.out.println(deck3.deal());
