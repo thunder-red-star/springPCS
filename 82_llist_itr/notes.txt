@@ -1,0 +1,23 @@
+ ▄▄▄▄▄▄▄▄                                   ▄▄▄▄▄     ▄▄    ▄▄      ▄▄          
+ ▀▀▀██▀▀▀                                   ▀▀▀██    ████   ██      ██          
+    ██      ▄████▄    ▄█████▄  ████▄██▄        ██    ████   ▀█▄ ██ ▄█▀ ▄▄█████▄ 
+    ██     ██▄▄▄▄██   ▀ ▄▄▄██  ██ ██ ██        ██   ██  ██   ██ ██ ██  ██▄▄▄▄ ▀ 
+    ██     ██▀▀▀▀▀▀  ▄██▀▀▀██  ██ ██ ██        ██   ██████   ███▀▀███   ▀▀▀▀██▄ 
+    ██     ▀██▄▄▄▄█  ██▄▄▄███  ██ ██ ██  █▄▄▄▄▄██  ▄██  ██▄  ███  ███  █▄▄▄▄▄██ 
+    ▀▀       ▀▀▀▀▀    ▀▀▀▀ ▀▀  ▀▀ ▀▀ ▀▀   ▀▀▀▀▀    ▀▀    ▀▀  ▀▀▀  ▀▀▀   ▀▀▀▀▀▀  
+                                                                                
+(William Vongphanith, Jacob Kirmayer, Ari Gurovich)
+
+APCS
+HW82 -- Roll Your Own Iterator
+03/26/22
+
+Discoveries:
+ - We discovered the UnsupportedOperationException and IllegalArgumentException
+   exceptions.
+ - We used the lovely Toilet/Figlet library to make the ASCII art.
+QCC:
+ - We don't use Iterator, but we use List because List impletements Iterable
+   but contains a lot of extra methods that we implemented that are native to 
+   lists but not iterators.
+ - Oracle Cloud sucks.
