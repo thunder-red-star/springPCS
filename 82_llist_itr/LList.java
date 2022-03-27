@@ -152,9 +152,40 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
 
 
     //return an Iterator over this list
-    public /* YOUR CODE HERE */
+    public Iterator<T> iterator()
     {
-        /* YOUR CODE HERE */
+	// How to get a stroke part 1
+	//
+	/*
+	Iterator<T> it = new Iterator<T>()
+	{
+	    private DLLNode<T> _curr = _head;
+
+	    public boolean hasNext()
+	    {
+		return _curr != null;
+	    }
+
+	    public T next()
+	    {
+		if ( !hasNext() )
+		    throw new NoSuchElementException();
+
+		T retVal = _curr.getCargo();
+		_curr = _curr.getNext();
+		return retVal;
+	    }
+
+	    public void remove()
+	    {
+		// Go by Oracle (worst cloud provider)'s docs
+		throw new UnsupportedOperationException();
+	    }
+	};
+	return it;
+	*/
+	// Use MyIterator
+	return new MyIterator();
     }
 
     //--------------------------------------------------------
@@ -254,7 +285,8 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
         //constructor
         public MyIterator()
         {
-            /* YOUR CODE HERE */
+            _dummy = new DLLNode<T>( null, null, _head );
+	    _okToRemove = false;
         }
 
         //-----------------------------------------------------------
@@ -262,14 +294,19 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
         //return true if iteration has more elements.
         public boolean hasNext()
         {
-            /* YOUR CODE HERE */
+            return _dummy.getNext() != null;
         }
 
 
         //return next element in this iteration
         public T next()
         {
-            /* YOUR CODE HERE */
+            if ( !hasNext() )
+		throw new NoSuchElementException();
+
+	    _dummy = _dummy.getNext();
+	    _okToRemove = true;
+	    return _dummy.getCargo();
         }
 
 
@@ -278,7 +315,18 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable" ?
         //               (...so that hasNext() will not crash)
         public void remove()
         {
-            /* YOUR CODE HERE */
+            if ( !_okToRemove )
+		throw new IllegalStateException();
+
+	    if ( _dummy.getPrev() == null ) {
+		removeFirst();
+
+		// update dummy node
+		_dummy = _head;
+
+		// reset flag
+		_okToRemove = false;
+
         }
         //--------------^  Iterator interface methods  ^-------------
         //-----------------------------------------------------------
