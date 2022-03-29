@@ -45,7 +45,17 @@ public class LatKtS
             return false;
         }
         else {
-            
+            Latkes stack = new Latkes(s.length());
+            String[] chars = s.split("");
+            for (String chr : chars) {
+                stack.push(chr);
+            }
+            for (String chr : chars) {
+                if (stack.pop() != chr) {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 
