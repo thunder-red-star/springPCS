@@ -87,7 +87,7 @@ public class LatKtS {
                         parenthesisCount--;
                     }
                 } else {
-                    System.out.println("Passing character " + character + "as it is not a parenthesis");
+                    System.out.println("Passing character " + character + " as it is not a parenthesis");
                 }
 
                 // Escape early if there are more closer than openers
