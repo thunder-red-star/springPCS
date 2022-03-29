@@ -60,4 +60,20 @@ public class Latkes
             temp[i] = _stack[i];
         _stack = temp;
     }
+
+    public String peek()
+    {
+        if( _stackSize == 0 )
+            return null;
+
+        return _stack[ _stackSize - 1 ];
+    }
+
+    public String toString()
+    {
+        String result = "";
+        for( int i = 0; i < _stackSize; i++ )
+            result += _stack[i] + ", ";
+        return result;
+    }
 }

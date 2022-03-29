@@ -6,8 +6,19 @@
  * Uses a stack to reverse a text string, check for sets of matching parens.
  **/
 
+import java.util.*;
+
 public class LatKtS
 {
+
+    public static boolean contains (String[] array, String value) {
+        for (String character : array) {
+            if (character.equals(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     /***
      * precondition:  input string has length > 0
@@ -21,7 +32,7 @@ public class LatKtS
         for (String character : characters ) {
             latke.push(character);
         }
-        String reverse;
+        String reverse = "";
         for (String character : characters ) {
             reverse += latke.pop();
         }
@@ -45,17 +56,27 @@ public class LatKtS
             return false;
         }
         else {
-            Latkes stack = new Latkes(s.length());
-            String[] chars = s.split("");
-            for (String chr : chars) {
-                stack.push(chr);
-            }
-            for (String chr : chars) {
-                if (stack.pop() != chr) {
-                    return false;
+            String[] openers = {"{", "(", "["};
+            String[] closers = {"}", ")", "]"};
+            // Latkes is a stack
+            Latkes latke = new Latkes(1);
+            for (String character : s.split("")) {
+                if (contains(openers, character)) {
+                    latke.push(character);
+                }
+                else if (contains(closers, character)) {
+                    if (latke.isEmpty()) {
+                        return false;
+                    }
+                    else if (latke.peek().equals(character)) {
+                        latke.pop();
+                    }
+                    else {
+                        return false;
+                    }
                 }
             }
-            return true;
+            return latke.isEmpty();
         }
     }
 
@@ -63,15 +84,13 @@ public class LatKtS
     //main method to test
     public static void main( String[] args )
     {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-    System.out.println(flip("stressed"));
-    System.out.println(allMatched( "({}[()])" )); //true
-    System.out.println(allMatched( "([)]" ) ); //false
-    System.out.println(allMatched( "(){([])}" ) ); //true
-    System.out.println(allMatched( "](){([])}" ) ); //false
-    System.out.println(allMatched( "(){([])}(" ) ); //false
-    System.out.println(allMatched( "()[[]]{{{{((([])))}}}}" ) ); //true
-      ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
+        System.out.println(flip("stressed"));
+        System.out.println(allMatched( "({}[()])" )); //true
+        System.out.println(allMatched( "([)]" ) ); //false
+        System.out.println(allMatched( "(){([])}" ) ); //true
+        System.out.println(allMatched( "](){([])}" ) ); //false
+        System.out.println(allMatched( "(){([])}(" ) ); //false
+        System.out.println(allMatched( "()[[]]{{{{((([])))}}}}" ) ); //true
     }
 
 }//end class

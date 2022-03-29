@@ -48,7 +48,9 @@ public class QueenBoard
         }
         for( int r = 0; r < _board.length; r++ ) {
             if( addQueen( r, col ) ) {
-                if( solveH( col + 1 ) ) {
+                boolean solved = solveH( col+1 );
+                System.out.println(solved);
+                if( solved && col == _board.length-1 ) {
                     return true;
                 }
                 removeQueen( r, col );
@@ -110,7 +112,6 @@ public class QueenBoard
             }
             offset++;
         }
-        System.out.println(this.toString());
         return true;
     }
 
