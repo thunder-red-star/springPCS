@@ -11,10 +11,6 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/README.md" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="3779" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/82_llist_itr/LList.java" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
           <option name="caretOffset" value="477" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/82_llist_itr/DLLNode.java" />
         </OpenedFileInfo>
@@ -31,8 +27,24 @@
           <option name="fileUrl" value="file://$PROJECT_DIR$/.gitignore" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="0" />
+          <option name="caretOffset" value="371" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/83_stack/Latkes.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="119" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/83_stack/Latkes.class" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="2823" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/story.txt" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="235" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/84_stack/Latkes.java" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="449" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/84_stack/LatKtS.java" />
         </OpenedFileInfo>
       </list>
     </option>
