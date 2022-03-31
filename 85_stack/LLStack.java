@@ -1,5 +1,3 @@
-// Linked list implementation of a stack
-
 class Node {
     private int data;
     private Node next;

@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-// ArrayList stack implementation
-
 public class ALStack<Pancake> implements Stack<Pancake> {
     private ArrayList<Pancake> stack;
 
