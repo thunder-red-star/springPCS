@@ -1,16 +1,3 @@
-/***
- * class Scheme
- * Simulates a rudimentary Scheme interpreter
- *
- * ALGORITHM for EVALUATING A SCHEME EXPRESSION:
- *   1. Steal underpants.
- *   2. ...
- *   5. Profit!
- *
- * STACK OF CHOICE: ____ by ____
- * b/c ...
- **/
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -49,7 +36,6 @@ class Stack<Pancake> {
         return result;
     }
 }
-
 
 public class Scheme {
     public static int convert (String op) {
@@ -148,7 +134,5 @@ public class Scheme {
         System.out.println(zoo4);
         System.out.println("zoo4 eval'd: " + evaluate(zoo4));
         //...-4
-    }//main()
-
-    //
-}//end class Scheme
+    }
+}
