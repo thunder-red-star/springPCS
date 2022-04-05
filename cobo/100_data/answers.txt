@@ -1,0 +1,35 @@
+                                                                                                    
+    ▄▄                            ██                  ██                                     ▄▄▄    
+   ████                ██         ▀▀                  ▀▀       ██                           █▀██    
+   ████     ▄█████▄  ███████    ████     ██▄  ▄██   ████     ███████   ▀██  ███               ██    
+  ██  ██   ██▀    ▀    ██         ██      ██  ██      ██       ██       ██▄ ██                ██    
+  ██████   ██          ██         ██      ▀█▄▄█▀      ██       ██        ████▀                ██    
+ ▄██  ██▄  ▀██▄▄▄▄█    ██▄▄▄   ▄▄▄██▄▄▄    ████    ▄▄▄██▄▄▄    ██▄▄▄      ███              ▄▄▄██▄▄▄ 
+ ▀▀    ▀▀    ▀▀▀▀▀      ▀▀▀▀   ▀▀▀▀▀▀▀▀     ▀▀     ▀▀▀▀▀▀▀▀     ▀▀▀▀      ██               ▀▀▀▀▀▀▀▀ 
+                                                                        ███                         
+                                                                                                    
+
+1. Some sites we visit:
+* Piazza 
+* Github (ap251 repos)
+* StuyCS.org
+
+2. 
+Piazza collects:
+* IP address, browser data, geolocation, and other information about your computer.
+
+Github collects:
+* Personal information, login information for their platform, transaction data, and other information about your use of the platform.
+
+StuyCS.org collects:
+* ???
+
+3. Delimited means having fixed boundaries or limits on the data that is collected. This is important because users do not want unlimited data to be collected and mined by the company.
+
+4. The header of the column probably indicates the type of data in the column.
+
+5. I am interested in programming and computer science.
+
+6. What are the solutions to all the APCS assignments? How do I get a 5 on the AP exam?
+
+

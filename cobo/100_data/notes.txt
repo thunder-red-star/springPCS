@@ -1,0 +1,19 @@
+Team Phantom Tollbooth :: William Vongphanith, Michael Kamela, Ari Gurovich
+APCS
+LAB08 -- Data data data
+2022-04-05
+time spent: <elapsed time in hours, rounded to nearest tenth>
+
+
+DISCO
+
+
+QCC
+
+
+<TNPG>'s CSV FLOW:
+<insert your description of your tools and workflow in creating, editing CSV files>
+
+
+TRUBZ
+<this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>
