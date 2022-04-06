@@ -32,4 +32,28 @@ StuyCS.org collects:
 
 6. What are the solutions to all the APCS assignments? How do I get a 5 on the AP exam?
 
+7. There aren't many datasets related to the StuyCS APCS assignments, but maybe we could source other students' assignments for answers, and read online resources related to the APCS subset. (WE ARE NOT PROMOTING ACADEMIC DISHONESTY)
 
+8. Roughly 30 students x 3 periods = 90 total datasets
+   Each dataset has about 80 homework directories so total 7200 files to source.
+
+9. If a website collects errors that might have occurred during usage, it could help them identify and fix the cause of each error. It could also help them discover other related errors, and see what content their users access and want to see so they can provide more content the users want.
+
+10. The APCS datasets are collected by Mr. Mykolyk, who collects the code and data from his students' GitHub repositories.
+
+11. Yes, there are cases where the collective data is more helpful because it could potentially help others understand the code and class better. 
+
+                                                                                                    
+    ▄▄                            ██                  ██                                    ▄▄▄▄▄   
+   ████                ██         ▀▀                  ▀▀       ██                          █▀▀▀▀██▄ 
+   ████     ▄█████▄  ███████    ████     ██▄  ▄██   ████     ███████   ▀██  ███                  ██ 
+  ██  ██   ██▀    ▀    ██         ██      ██  ██      ██       ██       ██▄ ██                 ▄█▀  
+  ██████   ██          ██         ██      ▀█▄▄█▀      ██       ██        ████▀               ▄█▀    
+ ▄██  ██▄  ▀██▄▄▄▄█    ██▄▄▄   ▄▄▄██▄▄▄    ████    ▄▄▄██▄▄▄    ██▄▄▄      ███              ▄██▄▄▄▄▄ 
+ ▀▀    ▀▀    ▀▀▀▀▀      ▀▀▀▀   ▀▀▀▀▀▀▀▀     ▀▀     ▀▀▀▀▀▀▀▀     ▀▀▀▀      ██               ▀▀▀▀▀▀▀▀ 
+                                                                        ███                         
+                                                                                                    
+
+1. Cereal
+
+2. 
