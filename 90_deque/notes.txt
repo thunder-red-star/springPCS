@@ -1,0 +1,11 @@
+  William Vongphanith, Jacob Kirmayer, and Ari Gurovich
+  APCS1 pd6
+  HW91 -- Deque the Halls
+  2022-04-13
+  Time spent: ~0.7 hours
+
+QCC:
+* My fingers are broken...
+
+DISCO:
+* Ctrl-shift-I works on IntelliJ too, so I just used that to rip the interface for Deque.
