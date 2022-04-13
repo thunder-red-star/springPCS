@@ -1,0 +1,5 @@
+QCC:
+* My fingers are broken...
+
+DISCO:
+* Ctrl-shift-I works on IntelliJ too, so I just used that to rip the interface for Deque.
