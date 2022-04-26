@@ -11,20 +11,23 @@ public class CelebrityGame
     /**
      * A reference to a Celebrity or subclass instance.
      */
-
+    private Celebrity celebrity;
     /**
      * The GUI frame for the Celebrity game.
      */
-
+    private CelebrityFrame frame;
     /**
      * The ArrayList of Celebrity values that make up the game
      */
-
+    private ArrayList<Celebrity> celebrities;
     /**
      * Builds the game and starts the GUI
      */
     public CelebrityGame()
     {
+	celebrities = new ArrayList<Celebrity>();
+	prepareGame();
+	frame = new CelebrityFrame(this);
     }
 
     /**
@@ -32,6 +35,7 @@ public class CelebrityGame
      */
     public void prepareGame()
     {
+	celebrities.clear();
     }
 
     /**
