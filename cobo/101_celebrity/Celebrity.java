@@ -16,6 +16,11 @@ public class Celebrity
     private String answer;
 
     /**
+     * The type of the celebrity.
+     */
+
+    private String type;
+    /**
      * Creates a Celebrity instance with the supplied answer and clue
      * @param answer
      * @param clue
@@ -24,7 +29,22 @@ public class Celebrity
     {
 	this.answer = answer;
 	this.clue = clue;
+	this.type = "None";
     }
+
+    /**
+     * Creates a Celebrity instance with the supplied answer, clue, and type
+     * @param answer
+     * @param clue
+     * @param type
+     */
+    public Celebrity(String answer, String clue, String type)
+    {
+	this.answer = answer;
+	this.clue = clue;
+	this.type = type;
+    }
+
 
     /**
      * Supplies the clue for the celebrity
@@ -76,6 +96,32 @@ public class Celebrity
 	{
 	    this.answer = answer;
 	}
+    }
+
+    /**
+     * Updates the type to the provided String.
+     * @param type The new type.
+     */
+    public void setType(String type)
+    {
+	if (type != null)
+	{
+	    this.type = type;
+	}
+    }
+
+    /**
+     * Supplies the type of the celebrity.
+     * @return
+     */
+    public String getType()
+    {
+	String retType = null;
+	if (type != null)
+	{
+	    retType = type;
+	}
+	return retType;
     }
 
     /**

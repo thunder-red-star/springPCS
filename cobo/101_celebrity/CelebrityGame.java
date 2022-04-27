@@ -26,8 +26,8 @@ public class CelebrityGame
     public CelebrityGame()
     {
 	celebrities = new ArrayList<Celebrity>();
-	prepareGame();
 	frame = new CelebrityFrame(this);
+	prepareGame();
     }
 
     /**
@@ -36,6 +36,7 @@ public class CelebrityGame
     public void prepareGame()
     {
 	celebrities.clear();
+	frame.replaceScreen("Celebrities");
     }
 
     /**
@@ -48,7 +49,7 @@ public class CelebrityGame
      */
     public boolean processGuess(String guess)
     {
-        return false;
+        return celebrity.getAnswer().equalsIgnoreCase(guess.trim());
     }
 
     /**
@@ -58,7 +59,12 @@ public class CelebrityGame
      */
     public void play()
     {
-
+	if (celebrities.size() == 0)
+	{
+	    throw new IllegalStateException("The celebrity list is empty.");
+	}
+	celebrity = celebrities.get(0);
+	frame.replaceScreen("Playing Celebrities");
     }
 
     /**
@@ -71,9 +77,9 @@ public class CelebrityGame
      * @param type
      *            What type of celebrity
      */
-    public void addCelebrity(String name, String guess, String type)
+    public void addCelebrity(String name, String clue, String type)
     {
-
+	celebrities.add(new Celebrity(name, clue, type));
     }
 
     /**
@@ -83,7 +89,7 @@ public class CelebrityGame
      */
     public boolean validateCelebrity(String name)
     {
-        return false;
+        return name.length() >= 4;
     }
 
     /**
@@ -95,7 +101,17 @@ public class CelebrityGame
      */
     public boolean validateClue(String clue, String type)
     {
-        return false;
+        String [] types = {"Faculty", "Student", "Actor", "Politician"};
+	int[] lengths = {10, 20, 30, 30};
+
+	for (int i = 0; i < types.length; i++)
+	{
+	    if (type.equalsIgnoreCase(types[i]))
+	    {
+		return clue.length() >= lengths[i];
+	    }
+	}
+	return false;
     }
 
     /**
@@ -105,7 +121,7 @@ public class CelebrityGame
      */
     public int getCelebrityGameSize()
     {
-        return 0;
+        return celebrities.size();
     }
 
     /**
@@ -116,7 +132,7 @@ public class CelebrityGame
      */
     public String sendClue()
     {
-        return null;
+        return celebrity.getClue();
     }
 
     /**
@@ -127,6 +143,6 @@ public class CelebrityGame
      */
     public String sendAnswer()
     {
-        return null;
+        return celebrity.getAnswer();
     }
 }
