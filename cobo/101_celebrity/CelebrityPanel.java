@@ -309,7 +309,5 @@ public class CelebrityPanel extends JPanel
         }
         // Used to move the text area to the current cursor
         clueArea.setCaretPosition(clueArea.getDocument().getLength());
-
     }
-
 }

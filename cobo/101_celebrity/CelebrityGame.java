@@ -21,13 +21,18 @@ public class CelebrityGame
      */
     private ArrayList<Celebrity> celebrities;
     /**
+     * The game window
+     */
+    private CelebrityFrame gameWindow;
+
+    /**
      * Builds the game and starts the GUI
      */
     public CelebrityGame()
     {
 	celebrities = new ArrayList<Celebrity>();
-	frame = new CelebrityFrame(this);
-	prepareGame();
+	gameWindow = new CelebrityFrame(this);
+	gameWindow.replaceScreen("START");
     }
 
     /**
@@ -59,12 +64,11 @@ public class CelebrityGame
      */
     public void play()
     {
-	if (celebrities.size() == 0)
+	if (celebrities != null && celebrities.size() > 0 )
 	{
-	    throw new IllegalStateException("The celebrity list is empty.");
-	}
-	celebrity = celebrities.get(0);
-	frame.replaceScreen("Playing Celebrities");
+	    this.celebrity = celebrities.get(0);
+            gameWindow.replaceScreen("GAME");
+        }	
     }
 
     /**
