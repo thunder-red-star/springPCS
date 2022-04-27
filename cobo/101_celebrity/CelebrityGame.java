@@ -41,7 +41,7 @@ public class CelebrityGame
     public void prepareGame()
     {
 	celebrities.clear();
-	frame.replaceScreen("Celebrities");
+	gameWindow.replaceScreen("Celebrities");
     }
 
     /**
