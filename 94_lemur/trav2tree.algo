@@ -1,0 +1,89 @@
+APCS pd6
+HW94 -- reverse engineering
+2022-05-06f
+time spent:0.4 hrs
+
+
+DISCO
+------------------------------------------------
+* Node structure and recursion can be used for this problem
+================================================
+
+
+QCC
+------------------------------------------------
+* Is there a cleaner way?
+================================================
+
+
+HOW KEEN ARE YOUR POWERS OF OBSERVATION?
+------------------------------------------------
+Q: For a given binary tree, how many unique pre-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique in-order traversals are there?
+A: 1
+
+Q: For a given binary tree, how many unique post-order traversals are there?
+A: 1
+
+Q: For a given traversal, how many unique trees could have produced it?
+A: Varies depending on the traversal
+
+Q: Given a pre-order traversal, what can you infer about its tree?
+A: It has the first item as the root
+
+Q: Given a post-order traversal, what can you infer about its tree?
+A: It has the last item as the root
+
+Q: What does "1-to-1" mean?
+A: Every item of one collection corresponds to every item of another
+
+Q: What does "onto" mean?
+A: pointing to
+
+================================================
+
+
+ALGO for pre and post order
+------------------------------------------------
+givens:
+pre order
+post order
+procedure:
+0. Make a new node, if there's only one character in each traversal, this is the node's value and the process ends here
+1. Remove first item from pre-order and last from post-order, this will be the value of the node
+2. Determine at which character i the post order contains the pre-order's new first item
+3. Assign the left child of this node as the result of this procedure on .substring(0,i+1) of both strings in the order they are passed to this procedure
+4. Assign the right child of this node as the result of this procedure on .substring(i+1) of both strings in the order they are passed to this procedure
+
+
+================================================
+
+ALGO for pre and in order
+------------------------------------------------
+givens:
+pre order 
+in order
+procedure:
+0. Make a new node, if there's only one character in each traversal, this is the root and the process ends here
+1. Remove first item from pre-order, this will be removed and made the node's value.
+2. Locate the item from step 1 in the in-order traversal. Call the character after it c if there is one.Remove the character from step 1 from the string.
+3. Call i the index in the in order where c is located. If c doesn't exist, set i to the string's length
+4. Assign the left child of this node as the result of this procedure on .substring(0,i) of both strings in the order they are passed to this procedure
+5. Assign the right child of this node as the result of this procedure on .substring(i) of both strings in the order they are passed to this procedure
+================================================
+
+ALGO for post and in order
+------------------------------------------------
+givens:
+post order 
+in order
+procedure:
+0. Make a new node, if there's only one character in each traversal, this is the root and the process ends here
+1. Remove last item from post-order, this will be removed and made the node's value.
+2. Locate the item from step 1 in the in-order traversal. Call the character after it c if there is one. Remove the character from step 1 from the string.
+3. Call i the index in the in order where c is located. If c doesn't exist, set i to the string's length
+4. Assign the left child of this node as the result of this procedure on .substring(0,i) of both strings in the order they are passed to this procedure
+5. Assign the right child of this node as the result of this procedure on .substring(i) of both strings in the order they are passed to this procedure
+================================================
