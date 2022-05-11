@@ -280,11 +280,15 @@ public class BST
     String output = "";
     if( currNode != null ) {
       String starterString = "";
-      for (int i = 0; i < level; i++) {
-        if (isLastNode[i]) {
-          starterString += "    ";
-        } else {
-          starterString += "│   ";
+      for (int i = 1; i < level; i++) {
+        try {
+          if (isLastNode[i]) {
+            starterString += "    ";
+          } else {
+            starterString += "│   ";
+          }
+        } catch (Exception e) {
+
         }
       }
       output += starterString + nodeSepStr + currNode.getValue() + "\n";
