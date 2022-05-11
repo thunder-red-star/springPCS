@@ -272,20 +272,44 @@ public class BST
   {
     // Use bTSHelper() to recurse through the tree
     // and print the subtrees in the correct order
-    return bTSHelper( _root, 0, "", false );
+    return bTSHelper( _root, 0, "", new boolean[]{false} );
   }
 
-  public String bTSHelper( TreeNode currNode, int level, String nodeSepStr, boolean isLastNode )
+  public String bTSHelper( TreeNode currNode, int level, String nodeSepStr, boolean[] isLastNode )
   {
     String output = "";
     if( currNode != null ) {
-      output += (isLastNode ? "    ".repeat(level - 1 > 0 ? level - 1 : 0) : "│   ".repeat(level - 1 > 0 ? level - 1 : 0)) + nodeSepStr + currNode.getValue() + "\n";
+      String starterString = "";
+      for (int i = 0; i < level; i++) {
+        if (isLastNode[i]) {
+          starterString += "    ";
+        } else {
+          starterString += "│   ";
+        }
+      }
+      output += starterString + nodeSepStr + currNode.getValue() + "\n";
     }
+    boolean[] newIsLastNode = new boolean[level + 1];
+    for (int i = 0; i < level; i++) {
+      newIsLastNode[i] = isLastNode[i];
+    }
+    if (currNode != null) {
+      if (currNode.getLeft() != null && currNode.getRight() != null) {
+        newIsLastNode[level] = false;
+      }
+      else if (currNode.getLeft() != null || currNode.getRight() != null) {
+        newIsLastNode[level] = true;
+      }
+      else {
+        newIsLastNode[level] = true;
+      }
+    }
+
     if( currNode.getLeft() != null )
     {
         if (currNode.getRight() != null)
         {
-          output += bTSHelper( currNode.getLeft(), level + 1,  "├── ", false );
+          output += bTSHelper( currNode.getLeft(), level + 1,  "├── ", newIsLastNode );
         }
         else
         {
