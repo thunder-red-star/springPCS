@@ -282,7 +282,7 @@ public class BST
       String starterString = "";
       for (int i = 1; i < level; i++) {
         try {
-          if (!isLastNode[i]) {
+          if (isLastNode[i]) {
             starterString += "    ";
           } else {
             starterString += "│   ";
