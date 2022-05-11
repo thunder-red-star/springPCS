@@ -13,6 +13,10 @@
  * This BST implementation only holds ints (its nodes have int cargo)
  */
 
+// Import linked list class for toString()
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 public class BST
 {
 
@@ -41,42 +45,87 @@ public class BST
     }
     else
     {
-      insert( _root, newNode );
+      insert( _root, newVal );
     }
   }
 
   //recursive helper for insert(int)
-  public void insert( TreeNode stRoot, TreeNode newNode )
+  public void insert( TreeNode stRoot, int newVal )
   {
-    if( newNode.getValue() < stRoot.getValue() )
+    // Must keep in mind this is a BST, so we must
+    // make sure that the new node is inserted in the
+    // correct place in the tree.
+    if( newVal < stRoot.getValue() )
     {
       if( stRoot.getLeft() == null )
       {
-	stRoot.setLeft( newNode );
+        // System.out.println( "Inserting " + newVal + " to left of " + stRoot.getValue() );
+        stRoot.setLeft( new TreeNode( newVal ) );
       }
       else
       {
-	insert( stRoot.getLeft(), newNode );
+        // System.out.println( "Going left of " + stRoot.getValue() );
+        insert( stRoot.getLeft(), newVal );
       }
     }
     else
     {
       if( stRoot.getRight() == null )
       {
-	stRoot.setRight( newNode );
+        // System.out.println( "Inserting " + newVal + " to right of " + stRoot.getValue() );
+        stRoot.setRight( new TreeNode( newVal ) );
       }
       else
       {
-	insert( stRoot.getRight(), newNode );
+        // System.out.println( "Going right of " + stRoot.getValue() );
+        insert( stRoot.getRight(), newVal );
       }
     }
   }//end insert()
 
 
-  public int height ()
-  {
-    return height( _root );
-  }
+  /*****************************************************
+     * TreeNode search(int)
+     * returns pointer to node containing target,
+     * or null if target not found
+     *****************************************************/
+    TreeNode search( int target )
+    {
+         TreeNode current = _root;
+          while( current != null )
+          {
+              if( target < current.getValue() )
+                  current = current.getLeft();
+              else if( target > current.getValue() )
+                  current = current.getRight();
+              else
+                  return current;
+          }
+          return null;
+    }
+
+
+    /*****************************************************
+     * int height()
+     * returns height of this tree (length of longest leaf-to-root path)
+     * eg: a 1-node tree has height 1
+     *****************************************************/
+    public int height()
+    {
+        // Traverse the tree and find the height
+        // We can implement a height function on trees
+        return height(_root);
+    }
+
+
+    /*****************************************************
+     * int numLeaves()
+     * returns number of leaves in tree
+     *****************************************************/
+    public int numLeaves()
+    {
+        return numLeaves(_root);
+    }
 
   //recursive helper for height()
   public int height( TreeNode stRoot )
@@ -91,13 +140,8 @@ public class BST
     }
   }//end height()
 
-  public int leaves ()
-  {
-    return leaves( _root );
-  }
-
-  //recursive helper for leaves()
-  public int leaves( TreeNode stRoot )
+  //recursive helper for numLeaves()
+  public int numLeaves ( TreeNode stRoot )
   {
     if( stRoot == null )
     {
@@ -109,7 +153,7 @@ public class BST
     }
     else
     {
-      return leaves( stRoot.getLeft() ) + leaves( stRoot.getRight() );
+      return numLeaves( stRoot.getLeft() ) + numLeaves( stRoot.getRight() );
     }
   }//end leaves()
 
@@ -176,6 +220,47 @@ public class BST
     }
   }
 
+  // Tree toString()
+  public String toString()
+  {
+    // Failed attempt to make a tree string much like the `tree` command in Ubuntu (it won't display nodes in the correct order)
+    String output = "";
+    Queue<TreeNode> queue = new LinkedList<TreeNode>();
+    queue.add( _root );
+    int level = 0;
+    while( !queue.isEmpty() )
+    {
+      int numNodes = queue.size();
+      for( int i = 0; i < numNodes; i++ )
+      {
+        TreeNode currNode = queue.remove();
+        if( currNode != null )
+        {
+          output += " ".repeat( level * 4 ) + ( i == numNodes - 1 ? "└── " : "├── " );
+          if( currNode.getLeft() != null )
+          {
+            System.out.println( currNode.getLeft().getValue() );
+            queue.add( currNode.getLeft() );
+          }
+          if( currNode.getRight() != null )
+          {
+            queue.add( currNode.getRight() );
+          }
+          output += currNode.getValue() + "\n";
+          if( queue.isEmpty() )
+          {
+            output += "    " + "\n";
+          }
+        }
+        else
+        {
+          output += "    " + "\n";
+        }
+      }
+      level++;
+    }
+    return output;
+  }
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -183,30 +268,20 @@ public class BST
   //main method for testing
   public static void main( String[] args )
   {
-          BST arbol = new BST();
-
-      //PROTIP: sketch state of tree after each insertion
-      //        ...BEFORE executing these.
-      arbol.insert( 4 );
-      arbol.insert( 2 );
-      arbol.insert( 5 );
-      arbol.insert( 6 );
-      arbol.insert( 1 );
-      arbol.insert( 3 );
-
-      System.out.println( "\n-----------------------------");
-      System.out.println( "pre-order traversal:" );
-      arbol.preOrderTrav();
-
-      System.out.println( "\n-----------------------------");
-      System.out.println( "in-order traversal:" );
-      arbol.inOrderTrav();
-
-      System.out.println( "\n-----------------------------");
-      System.out.println( "post-order traversal:" );
-      arbol.postOrderTrav();
-
-      System.out.println( "\n-----------------------------");
+          BST x = new BST();
+      x.insert( 16 );
+      x.insert( 8 );
+      x.insert( 20 );
+      x.insert( 24 );
+      x.insert( 4 );
+      x.insert( 12 );
+      x.insert( 25 );
+      x.insert( 2 );
+      System.out.println( x.toString() );
+      System.out.println(x.numLeaves());
+      System.out.println("...expecting 3");
+      System.out.println(x.height());
+      System.out.println("...expecting 3");
         }
 
 }//end class
