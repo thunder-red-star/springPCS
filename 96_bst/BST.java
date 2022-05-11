@@ -279,22 +279,22 @@ public class BST
   {
     String output = "";
     if( currNode != null ) {
-      output += nodeSepStr + currNode.getValue() + "\n";
+      output += "│   ".repeat(level) + nodeSepStr + currNode.getValue() + "\n";
     }
     if( currNode.getLeft() != null )
     {
         if (currNode.getRight() != null)
         {
-          output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "├── " );
+          output += bTSHelper( currNode.getLeft(), level + 1,  "├── " );
         }
         else
         {
-          output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "└── ");
+          output += bTSHelper( currNode.getLeft(), level + 1,  "└── ");
         }
     }
       if( currNode.getRight() != null )
       {
-        output += bTSHelper( currNode.getRight(), level + 1, nodeSepStr + "└── " );
+        output += bTSHelper( currNode.getRight(), level + 1, "└── " );
       }
     return output;
   }
