@@ -20,6 +20,10 @@ import java.util.Stack;
 public class BST
 {
 
+  public static final String treeStringLastNode = "└── ";
+  public static final String treeStringNode = "├── ";
+  public static final String treeStringEmptyNode = "│   ";
+
   //instance variables / attributes of a BST:
   TreeNode _root;
 
@@ -271,19 +275,31 @@ public class BST
     return bTSHelper( _root, 0 );
   }
 
-  public String bTSHelper( TreeNode currNode, int level )
+  public String bTSHelper( TreeNode currNode, int level, String nodeSepStr )
   {
-    String output = "";
-    if( currNode != null )
+    // Base case
+    if( currNode == null )
     {
-      output += (" ".repeat( level * 4 ) + currNode.getValue() + "\n");
-      if( currNode.getLeft() != null )
+      return "";
+    }
+    String output = "";
+    if( currNode != null ) {
+      output += nodeSepStr + currNode.getValue() + "\n";
+    }
+    if( currNode.getLeft() != null ) {
       {
-        output += bTSHelper( currNode.getLeft(), level + 1 );
+        if (currNode.getRight() != null)
+        {
+          output += bTSHelper( currNode.getLeft(), level + 1, "│   " + nodeSepStr );
+        }
+        else
+        {
+          output += bTSHelper( currNode.getLeft(), level + 1, "└── " + nodeSepStr );
+        }
       }
       if( currNode.getRight() != null )
       {
-        output += bTSHelper( currNode.getRight(), level + 1 );
+        output += bTSHelper( currNode.getRight(), level + 1, "└── " + nodeSepStr );
       }
     }
     return output;
