@@ -277,11 +277,6 @@ public class BST
 
   public String bTSHelper( TreeNode currNode, int level, String nodeSepStr )
   {
-    // Base case
-    if( currNode == null )
-    {
-      return "";
-    }
     String output = "";
     if( currNode != null ) {
       output += nodeSepStr + currNode.getValue() + "\n";
@@ -290,16 +285,16 @@ public class BST
       {
         if (currNode.getRight() != null)
         {
-          output += bTSHelper( currNode.getLeft(), level + 1, "│   " + nodeSepStr );
+          output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "│   " );
         }
         else
         {
-          output += bTSHelper( currNode.getLeft(), level + 1, "└── " + nodeSepStr );
+          output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "└── ");
         }
       }
       if( currNode.getRight() != null )
       {
-        output += bTSHelper( currNode.getRight(), level + 1, "└── " + nodeSepStr );
+        output += bTSHelper( currNode.getRight(), level + 1, nodeSepStr + "└── " );
       }
     }
     return output;
