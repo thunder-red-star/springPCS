@@ -239,7 +239,7 @@ public class BST
           output += " ".repeat( level * 4 ) + ( i == numNodes - 1 ? "└── " : "├── " );
           if( currNode.getLeft() != null )
           {
-            System.out.println( currNode.getLeft().getValue() );
+            // System.out.println( currNode.getLeft().getValue() );
             queue.add( currNode.getLeft() );
           }
           if( currNode.getRight() != null )
@@ -254,13 +254,41 @@ public class BST
         }
         else
         {
-          output += "    " + "\n";
+          output += "│   " + "\n";
         }
       }
       level++;
     }
     return output;
   }
+
+  // BetterToString()
+  // A better toString that prints subtrees in the correct order
+  public String betterToString()
+  {
+    // Use bTSHelper() to recurse through the tree
+    // and print the subtrees in the correct order
+    return bTSHelper( _root, 0 );
+  }
+
+  public String bTSHelper( TreeNode currNode, int level )
+  {
+    String output = "";
+    if( currNode != null )
+    {
+      output += (" ".repeat( level * 4 ) + currNode.getValue() + "\n");
+      if( currNode.getLeft() != null )
+      {
+        output += bTSHelper( currNode.getLeft(), level + 1 );
+      }
+      if( currNode.getRight() != null )
+      {
+        output += bTSHelper( currNode.getRight(), level + 1 );
+      }
+    }
+    return output;
+  }
+
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -278,6 +306,7 @@ public class BST
       x.insert( 25 );
       x.insert( 2 );
       System.out.println( x.toString() );
+      System.out.println( x.betterToString() );
       System.out.println(x.numLeaves());
       System.out.println("...expecting 3");
       System.out.println(x.height());
