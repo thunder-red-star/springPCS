@@ -275,26 +275,26 @@ public class BST
     return bTSHelper( _root, 0, "" );
   }
 
-  public String bTSHelper( TreeNode currNode, int level, String nodeSepStr )
+  public String bTSHelper( TreeNode currNode, int level, String nodeSepStr, boolean isLastNode )
   {
     String output = "";
     if( currNode != null ) {
-      output += "│   ".repeat(level - 1 > 0 ? level - 1 : 0) + nodeSepStr + currNode.getValue() + "\n";
+      output += (isLastNode ? "    ".repeat(level - 1 > 0 ? level - 1 : 0) : "│   ".repeat(level - 1 > 0 ? level - 1 : 0)) + nodeSepStr + currNode.getValue() + "\n";
     }
     if( currNode.getLeft() != null )
     {
         if (currNode.getRight() != null)
         {
-          output += bTSHelper( currNode.getLeft(), level + 1,  "├── " );
+          output += bTSHelper( currNode.getLeft(), level + 1,  "├── ", false );
         }
         else
         {
-          output += bTSHelper( currNode.getLeft(), level + 1,  "└── ");
+          output += bTSHelper( currNode.getLeft(), level + 1,  "└── ", true );
         }
     }
       if( currNode.getRight() != null )
       {
-        output += bTSHelper( currNode.getRight(), level + 1, "└── " );
+        output += bTSHelper( currNode.getRight(), level + 1, "└── ", true );
       }
     return output;
   }
