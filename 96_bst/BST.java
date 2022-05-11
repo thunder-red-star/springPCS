@@ -285,7 +285,7 @@ public class BST
       {
         if (currNode.getRight() != null)
         {
-          output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "│   " );
+          output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "├── " );
         }
         else
         {
