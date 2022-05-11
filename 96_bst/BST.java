@@ -313,12 +313,12 @@ public class BST
         }
         else
         {
-          output += bTSHelper( currNode.getLeft(), level + 1,  "└── ", true );
+          output += bTSHelper( currNode.getLeft(), level + 1,  "└── ", newIsLastNode );
         }
     }
       if( currNode.getRight() != null )
       {
-        output += bTSHelper( currNode.getRight(), level + 1, "└── ", true );
+        output += bTSHelper( currNode.getRight(), level + 1, "└── ", newIsLastNode );
       }
     return output;
   }
