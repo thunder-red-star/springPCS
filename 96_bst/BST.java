@@ -275,7 +275,7 @@ public class BST
     return bTSHelper( _root, 0, "", new boolean[]{false} );
   }
 
-  public String bTSHelper( TreeNode currNode, int level, String nodeSepStr, boolean[] isLastNode, boolean ln )
+  public String bTSHelper( TreeNode currNode, int level, String nodeSepStr, boolean[] isLastNode )
   {
     String output = "";
     if( currNode != null ) {
