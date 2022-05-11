@@ -279,7 +279,7 @@ public class BST
   {
     String output = "";
     if( currNode != null ) {
-      output += "│   ".repeat(level) + nodeSepStr + currNode.getValue() + "\n";
+      output += "│   ".repeat(level - 1 > 0 ? level - 1 : 0) + nodeSepStr + currNode.getValue() + "\n";
     }
     if( currNode.getLeft() != null )
     {
