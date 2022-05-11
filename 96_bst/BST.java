@@ -272,7 +272,7 @@ public class BST
   {
     // Use bTSHelper() to recurse through the tree
     // and print the subtrees in the correct order
-    return bTSHelper( _root, 0 );
+    return bTSHelper( _root, 0, "" );
   }
 
   public String bTSHelper( TreeNode currNode, int level, String nodeSepStr )
