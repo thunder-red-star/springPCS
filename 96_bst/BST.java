@@ -305,7 +305,7 @@ public class BST
         newIsLastNode[level] = true;
       }
       else {
-        newIsLastNode[level] = true;
+        newIsLastNode[level] = false;
       }
     }
 
