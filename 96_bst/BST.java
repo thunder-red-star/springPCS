@@ -343,6 +343,18 @@ public class BST
       x.insert( 12 );
       x.insert( 25 );
       x.insert( 2 );
+      x.insert( 6 );
+      x.insert( 10 );
+      x.insert( 14 );
+      x.insert( 22 );
+      x.insert( 28 );
+      x.insert( 1 );
+      x.insert( 3 );
+      x.insert( 5 );
+      x.insert( 7 );
+      x.insert( 9 );
+      x.insert( 11 );
+      x.insert( 13 );
       System.out.println( x.toString() );
       System.out.println( x.betterToString() );
       System.out.println(x.numLeaves());
