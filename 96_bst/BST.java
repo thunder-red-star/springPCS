@@ -281,8 +281,8 @@ public class BST
     if( currNode != null ) {
       output += nodeSepStr + currNode.getValue() + "\n";
     }
-    if( currNode.getLeft() != null ) {
-      {
+    if( currNode.getLeft() != null )
+    {
         if (currNode.getRight() != null)
         {
           output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "├── " );
@@ -291,12 +291,11 @@ public class BST
         {
           output += bTSHelper( currNode.getLeft(), level + 1,  nodeSepStr + "└── ");
         }
-      }
+    }
       if( currNode.getRight() != null )
       {
         output += bTSHelper( currNode.getRight(), level + 1, nodeSepStr + "└── " );
       }
-    }
     return output;
   }
 
