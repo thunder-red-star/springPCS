@@ -1,0 +1,5 @@
+APCS pd6
+JAWS: Jacob Kirmayer, Ari Gurovich, William Vongphanith
+time spent: 0.8 hrs
+DISCO: Trees can be printed neatly by using a queue system that empties and refills at each layer
+QCC: Is making the root node the rightmost value on the left subtree the best way to do this?
