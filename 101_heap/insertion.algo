@@ -1,0 +1,4 @@
+1. Inserting the value into the last position of the heap
+2. Then, we compare the value with its parent and swap if necessary
+3. Then, we compare the value with its children and swap if necessary
+4. Repeat step 2 and 3 until the value is in the correct position

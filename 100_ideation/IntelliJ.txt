@@ -1,0 +1,10 @@
+My idea for the final project
+==============================
+
+I will probably be using Java to implement a text editor, similar to vim. I'll be using ANSI escape codes for the text
+highlighting, and also to set cursor positions. The text will be stored in an invisible temp file, and the file will be
+read and written to during the program's execution. The program will be able to save the file to a file, and also load a
+file. The program will also be able to undo and redo actions.
+
+We'll be using stacks to implement undo and redo, and to match parentheses, brackets, and braces. We'll be using queues
+to implement the search and replace functions.

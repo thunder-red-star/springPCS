@@ -1,0 +1,14 @@
+Team JAWs (Jacob Kirmayer, Ari Gurovich, William Vongphanith)
+APCS1 pd6
+HW101 -- A Heap of Trouble
+2022-05-16
+Time spent: ~0.4 hours
+
+
+Discoveries:
+- N/A
+
+Questions Comments Concerns:
+- We implemented the reheapify portion of each method within the methods' algorithms, but wouldn't it be cleaner to just
+  have the methods call the reheapify method?
+- We never implemented swap even though it's elementary and doesn't really need describing for the algorithm.
