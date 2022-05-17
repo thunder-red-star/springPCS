@@ -1,0 +1,68 @@
+
+    //main method for testing
+    public static void main( String[] args ) {
+
+	BST arbol = new BST();
+
+	System.out.println( "tree init'd: " + arbol );
+
+	//inserting in this order will build a perfect tree
+	arbol.insert( 3 );
+	arbol.insert( 1 );
+	arbol.insert( 0 );
+	arbol.insert( 2 );
+	arbol.insert( 5 );
+	arbol.insert( 4 );
+	arbol.insert( 6 );
+	/*
+	*/
+
+	//insering in this order will build a linked list to left
+	/*
+	arbol.insert( 6 );
+	arbol.insert( 5 );
+	arbol.insert( 3 );
+	arbol.insert( 4 );
+	arbol.insert( 2 );
+	arbol.insert( 1 );
+	arbol.insert( 0 );
+	*/
+
+	System.out.println( "tree after insertions:\n" + arbol );
+	System.out.println();
+
+	System.out.println();
+	for( int i=-1; i<8; i++ ) {
+	    System.out.println(" searching for "+i+": " + arbol.search(i) );    
+	}
+
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(6);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(5);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(4);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(3);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(2);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(1);
+	System.out.println();
+	System.out.println( arbol );
+
+	arbol.remove(0);
+	System.out.println();
+	System.out.println( arbol );
