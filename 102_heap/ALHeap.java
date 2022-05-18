@@ -27,16 +27,30 @@ public class ALHeap
    * a) a level-order traversal of the tree (simple version)
    * b) ASCII representation of the tree (more complicated, more fun)
    */
-  public String toString()
-  {
-    String result = "";
-    // Temp implementation
-    for (int i = 0; i < _heap.size(); i++)
-    {
-      result += _heap.get(i) + " ";
-    }
-    return result;
-  }//O(?)
+  public String toString() {
+        int height = (int) (Math.log(_heap.size()) / Math.log(2) + 1);
+        int layerLength = 1;
+        int idx = 0;
+        int spaceSize = (int) Math.pow(2, height) - 1;
+        String res = "";
+        for (int layer = 0; layer < height; layer++) {
+            for (int sp = 0; sp < 2 * (spaceSize - 1) / 2; sp++)
+                res += " ";
+            for (int i = 0; i < layerLength; i++) {
+                if (idx < _heap.size()) {
+                    res += _heap.get(idx).toString();
+                    for (int sp = 0; sp < 2 * spaceSize; sp++)
+                        res += " ";
+                    idx++;
+                }
+            }
+            layerLength *= 2;
+            spaceSize = (spaceSize - 1) / 2;
+            res += "\n";
+        }
+        return res;
+    }//O(n)
+
 
 
   /**
