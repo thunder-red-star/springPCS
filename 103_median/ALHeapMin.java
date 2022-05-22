@@ -17,6 +17,7 @@ public class ALHeapMin implements Heap {
       swap(i, parent(i));
       i = parent(i);
     }
+    minHeapify(i);
   }
 
   public int remove() {
@@ -79,6 +80,14 @@ public class ALHeapMin implements Heap {
       System.out.print(heap.get(i) + " ");
     }
     System.out.println();
+  }
+
+  public String toString() {
+    String result = "";
+    for (int i = 0; i < size; i++) {
+      result += heap.get(i) + " ";
+    }
+    return result;
   }
 
   public static void main(String[] args) {

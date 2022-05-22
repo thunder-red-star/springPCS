@@ -17,6 +17,7 @@ public class ALHeapMax implements Heap {
       swap(index, parent(index));
       index = parent(index);
     }
+    maxHeapify(index);
   }
 
   public int remove() {
@@ -25,7 +26,7 @@ public class ALHeapMax implements Heap {
     heap.remove(size - 1);
     size--;
     int index = 0;
-    maxHeapify(0);
+    maxHeapify(index);
     return max;
   }
 
@@ -80,6 +81,14 @@ public class ALHeapMax implements Heap {
       System.out.print(heap.get(i) + " ");
     }
     System.out.println();
+  }
+
+  public String toString() {
+    String result = "";
+    for (int i = 0; i < size; i++) {
+      result += heap.get(i) + " ";
+    }
+    return result;
   }
 
   public static void main ( String[] args ) {
